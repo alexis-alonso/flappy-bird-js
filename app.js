@@ -3,39 +3,60 @@ let gravity = 0.5;
 let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 
+// recall: this method is to get details about the rect/area around the bird image
 let bird_props = bird.getBoundingClientRect();
+
 
 let background = document.querySelector('.background').getBoundingClientRect();
 let scoreVal = document.querySelector('.scoreVal');
 let message = document.querySelector('.message');
 let scoreTitle = document.querySelector('.scoreTitle');
 
+// something to determine if the game is playing or ready to start
 let gameState = 'Start';
+
+// at the start of the game, the bird won't show
 img.style.display = 'none';
 message.classList.add('messageStyle');
 
+// how to actually start the game, with a key pressed down and what state the game is in
 document.addEventListener('keydown', (e) => {
+    // how to set a specific key AND if the game isn't already playing yet
     if(e.key == "Enter" && gameState != 'Play') {
+
+        // it's in the CSS
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
+        // when the game is playing, the bird will have a block area around it (which will determine if we hit a pipe anywhere)
         img.style.display = 'block';
         bird.style.top = '40vh';
+
+        // set the game condition to play
         gameState = 'Play';
         message.innerHTML = '';
+
+        // setting the scoreboard
         scoreTitle.innerHTML = "Score : ";
         scoreVal.innerHTML = '0';
         message.classList.remove('messageStyle');
+
+        // start the game with this function
         play();
     }
 });
 
+// how does the game function?
 function play() {
+
+    // how to operate the bird
     function move() {
+
         if(gameState != 'Play') {
             return;
         };
-
+        
+        
         let pipe_sprite = document.querySelectorAll('.pipe_sprite');
 
         pipe_sprite.forEach((element) => {
