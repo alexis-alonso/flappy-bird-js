@@ -3,6 +3,7 @@ let gravity = 0.5;
 let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 
+// note: this method gives us properties of the surrounding area of 'bird'
 let bird_props = bird.getBoundingClientRect();
 
 let background = document.querySelector('.background').getBoundingClientRect();
