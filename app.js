@@ -3,11 +3,7 @@ let gravity = 0.5;
 let bird = document.querySelector('.bird');
 let img = document.getElementById('bird-1');
 
-<<<<<<< HEAD
-// note: this method gives us properties of the surrounding area of 'bird'
-=======
 // recall: this method is to get details about the rect/area around the bird image
->>>>>>> 253619fe5736c70e814fa8e66114708f5605cf54
 let bird_props = bird.getBoundingClientRect();
 
 
