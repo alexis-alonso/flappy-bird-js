@@ -1,1 +1,5 @@
-hello, testing on pc
+requestAnimationFrame notes:
+
+-pauses active animations if the tab becomes inactive, meaning if you move tab or window, the animation stops til you come back
+
+-it runs the callback function again when the browser is ready to run it again (that's how this method works essentially)

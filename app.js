@@ -129,7 +129,7 @@ function play() {
         // when a key is pressed
         document.addEventListener('keydown', (e) => {
 
-            // in particular, when the Arrow Up key OR the spacebar is pressed
+            // in particular, when the Arrow Up key OR the space bar is pressed
             if(e.key == 'ArrowUp' || e.key == ' ') {
 
                 // this is like setting the flapping image (because the initial image is normal bird, key pressed is the bird flapping its wings)
@@ -143,7 +143,7 @@ function play() {
         // when a key is released
         document.addEventListener('keyup', (e) => {
 
-            // in particular, when the Arrow Up key OR the spacebar is released
+            // in particular, when the Arrow Up key OR the space bar is released
             if(e.key == 'ArrowUp' || e.key == ' ') {
 
                 // return to the non-flapping image
@@ -194,7 +194,7 @@ function play() {
             pipe_separation = 0;
 
             // let this new var be a random number
-            let pipePosi = Math.floor(Math.random() * 43) + 8;
+            let pipe_Position = Math.floor(Math.random() * 43) + 8;
 
             // make a new div in the DOM (we're going to make the new pipes at even intervals)
             let pipeSpriteInv = document.createElement('div');
@@ -203,7 +203,7 @@ function play() {
             pipeSpriteInv.className = 'pipe_sprite';
 
             // take that random value from earlier do the math, apply this as a height value to the top of the pipe (also determines how close top pipe is to bottom)
-            pipeSpriteInv.style.top = pipePosi - 70 + 'vh';
+            pipeSpriteInv.style.top = pipe_Position - 70 + 'vh';
 
             // start the left side of the pipe at the end of the viewport
             pipeSpriteInv.style.left = '100vw';
@@ -216,7 +216,7 @@ function play() {
             pipe_sprite.className = 'pipe_sprite';
 
             // set the bottom pipe's top to be this equation
-            pipe_sprite.style.top = pipePosi + pipeGap + 'vh';
+            pipe_sprite.style.top = pipe_Position + pipeGap + 'vh';
 
             // start the left side of the pipe at the end of the viewport (again)
             pipe_sprite.style.left = '100vw';
@@ -235,3 +235,6 @@ function play() {
     }
     requestAnimationFrame(createPipe);
 }
+
+
+
